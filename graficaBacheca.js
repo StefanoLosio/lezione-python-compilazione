@@ -12,15 +12,20 @@ async function caricaAgenda() {
         nota.id = element.id;
 
         nota.innerHTML = `
-            <div style="display: flex; flex-direction: row; width: 100%; height: 20%; justify-content: space-between;">
-                    <div class="nome_nota">${element.titolo}</div>
-                    <div class="edit">
-                        <button class="mod">✏️</button>
-                        <button class="del">🗑️</button>
-                    </div>
-                </div> 
+           <div style="display: flex; flex-direction: row; width: 100%; height: 20%; justify-content: space-between;">
+                <div class="nome_nota">Ciao</div>
+                <button class="del">🗑️</button>
+            </div> 
             <div class="contenuto">${element.contenuto}</div>
         `;
+
+        const deleteButton = nota.querySelector(".del");
+        deleteButton.addEventListener("click", async () => {
+            if (confirm("Sei sicuro di voler eliminare questo elemento?")) {
+                nota.remove();
+                await window.pywebview.api.rimuoviNota(parseFloat(element.id));
+            }
+        });
 
         bacheca.appendChild(nota);
     });

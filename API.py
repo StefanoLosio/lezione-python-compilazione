@@ -12,12 +12,17 @@ class api_primaria:
     def getAgenda(self):
         return self.agenda
 
-    def rimuoviNota(self, id:int):
+    def rimuoviNota(self, id):
         contatore=0
         for i in self.agenda:
             if i['id']==id:
-               self.agenda.remove(contatore)
+               self.agenda.pop(contatore)
             contatore=contatore+1
+
+        locale = open("agenda.csv", 'w')
+        for i in self.agenda:
+            locale.write( str(i['id']) + ';' + i['titolo'] + ';' + i['contenuto'] + '\n')
+        locale.close()
 
     def apriForm(self):
         form=api_secondaria(self.agenda)
@@ -36,17 +41,23 @@ class api_secondaria:
     def chiudiFinestra(self):
         self.finestra.destroy()
 
-    def aggiungiNota(self,nota:dict):
-        flag=False
-        while(not flag):
-            id=random.random()
+    def aggiungiNota(self, nota: dict):
+        # genera un ID unico
+        while True:
+            id = random.random()
+            if not any(i['id'] == id for i in self.agenda):
+                break
+
+        nota['id'] = id
+        self.agenda.append(nota)
+
+        # salva su CSV
+        with open("agenda.csv", 'w') as locale:
             for i in self.agenda:
-                if i['id']==id:
-                    id=random.random()
-                else:
-                    nota['id']=id
-                    self.agenda.append(nota)
-                    flag=True
+                locale.write(f"{i['id']};{i['titolo']};{i['contenuto']}\n")
+
+        print(self.agenda)
+
     
     def aggiornaGrafica(self):
         self.finestra_principale.evaluate_js("caricaAgenda()")

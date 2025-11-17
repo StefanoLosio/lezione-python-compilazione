@@ -2,7 +2,7 @@ const titolo = document.getElementById("titolo");
 const contenuto = document.getElementById("contenuto");
 const bottone = document.getElementById("invia");
 
-bottone.addEventListener('click', function(){
+bottone.addEventListener('click', async function(){
 
     if(titolo.value.trim() !== "" && contenuto.value.trim() !== "") {
         let nota = {
@@ -12,9 +12,9 @@ bottone.addEventListener('click', function(){
 
         console.log(nota);
 
-        window.pywebview.api.aggiungiNota(nota);
-
-        window.pywebview.api.chiudiFinestra();
+        await window.pywebview.api.aggiungiNota(nota);
     }
-    window.pywebview.api.aggiornaGrafica();
+    await window.pywebview.api.aggiornaGrafica();
+
+    await window.pywebview.api.chiudiFinestra();
 });
