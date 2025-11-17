@@ -19,10 +19,9 @@ class api_primaria:
                self.agenda.pop(contatore)
             contatore=contatore+1
 
-        locale = open("agenda.csv", 'w')
-        for i in self.agenda:
-            locale.write( str(i['id']) + ';' + i['titolo'] + ';' + i['contenuto'] + '\n')
-        locale.close()
+        with open("agenda.csv", "w", newline="") as locale:
+            for i in self.agenda:
+                locale.write(f"{i['id']};{i['titolo']};{i['contenuto']}\n")
 
     def apriForm(self):
         form=api_secondaria(self.agenda)
@@ -42,7 +41,6 @@ class api_secondaria:
         self.finestra.destroy()
 
     def aggiungiNota(self, nota: dict):
-        # genera un ID unico
         while True:
             id = random.random()
             if not any(i['id'] == id for i in self.agenda):
@@ -51,8 +49,7 @@ class api_secondaria:
         nota['id'] = id
         self.agenda.append(nota)
 
-        # salva su CSV
-        with open("agenda.csv", 'w') as locale:
+        with open("agenda.csv", "w", newline="") as locale:
             for i in self.agenda:
                 locale.write(f"{i['id']};{i['titolo']};{i['contenuto']}\n")
 

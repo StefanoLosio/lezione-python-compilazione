@@ -1,5 +1,6 @@
 import webview
 from API import api_primaria
+from ripristina import rispristinaNote
 
 agenda=[] # test: {'titolo':'ciao','contenuto':'ciao','id':5}
 

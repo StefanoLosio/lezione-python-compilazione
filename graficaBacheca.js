@@ -13,7 +13,7 @@ async function caricaAgenda() {
 
         nota.innerHTML = `
            <div style="display: flex; flex-direction: row; width: 100%; height: 20%; justify-content: space-between;">
-                <div class="nome_nota">Ciao</div>
+                <div class="nome_nota">${element.titolo}</div>
                 <button class="del">🗑️</button>
             </div> 
             <div class="contenuto">${element.contenuto}</div>
@@ -30,3 +30,5 @@ async function caricaAgenda() {
         bacheca.appendChild(nota);
     });
 }
+
+window.addEventListener("pywebviewready", caricaAgenda);
