@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inserisci Nota</title>
+        <script src="addNota.js" defer></script>
+        <script src="graficaBacheca.js" defer></script>
+        <style>
+            body { font-family: Arial, sans-serif; }
+            form { width: 80%; margin: 50px auto; display: flex; flex-direction: column; gap: 10px; }
+            input, textarea { padding: 5px; border-radius: 3px; border: 1px solid #ccc; width: 100%; }
+            button { padding: 5px 10px; cursor: pointer; border-radius: 3px; border: none; background-color: lightgreen; }
+        </style>
+    </head>
+    <body>
+        <form id="nota-form">
+            <label for="titolo">Titolo:</label>
+            <input type="text" id="titolo" required>
+
+            <label for="contenuto">Nota:</label>
+            <textarea id="contenuto" rows="4" required></textarea>
+
+            <button type="button" id="invia">Aggiungi Nota</button>
+        </form>
+    </body>
+</html>
