@@ -56,6 +56,7 @@ Distribuito sotto licenza **[CC BY-NC-ND 4.0](https://creativecommons.org/licens
 Per qualsiasi domanda o segnalazione:  
 - ✉️ **mail@gabrielecocchetti.it**  
 - ✉️ **stefanolosio2008@gmail.com**
+- ✉️ **michelequaini016@gmail.com**
   
 
 ## ⚠️ Avvertenza
