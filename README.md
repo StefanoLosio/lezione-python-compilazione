@@ -1,4 +1,7 @@
+
 # 🗂️ Agenda - App per Appunti
+
+### 🧩 Descrizione del Progetto  
 
 Questa piccola applicazione mostra un'Agenda desktop realizzata con Python e `pywebview`, con interfaccia HTML/CSS/JS. 
 Il progetto è pensato per essere facilmente reso un `.exe` usando PyInstaller.
@@ -42,22 +45,31 @@ pyinstaller --onefile --windowed `
 - Il `.exe` risultante sarà in `dist\main.exe`.
 - Rimuovi `--windowed` se vuoi vedere la console per debug.
 
-**Dipendenze principali**
-- `pywebview`
-- `pyinstaller` (solo per il packaging)
+---
+
+## 👥 Autori
+
+- [@Gabriele Cocchetti](https://www.github.com/gabricocche)  
+- [@Stefano Losio](https://github.com/StefanoLosio)
+- [@Michele Quaini]
+
+---
 
 ## ⚖️ Licenza
 
 Distribuito sotto licenza **[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it)**  
 > È consentito condividere il progetto con attribuzione, ma **non è consentito modificarlo o usarlo a fini commerciali**.
 
+---
+
 ## 📬 Contatti
 
 Per qualsiasi domanda o segnalazione:  
-- ✉️ **mail@gabrielecocchetti.it**  
-- ✉️ **stefanolosio2008@gmail.com**
-- ✉️ **michelequaini016@gmail.com**
-  
+- ✉️ mail@gabrielecocchetti.it  
+- ✉️ stefanolosio2008@gmail.com  
+- ✉️ michelequaini016@gmail.com  
+
+---
 
 ## ⚠️ Avvertenza
 
